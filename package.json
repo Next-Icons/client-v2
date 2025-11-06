@@ -1,0 +1,38 @@
+{
+	"private": true,
+	"version": "0.0.1",
+	"name": "nexticons-client-v2",
+	"description": "The official website for the Next-Icons package. Using Next.js and TailwindCSS.",
+	"scripts": {
+		"dev": "next dev --turbopack -p 3000",
+		"build": "next build --turbopack",
+		"start": "next start -p 8352",
+		"lint": "eslint",
+		"format:check": "prettier --check .",
+		"format:write": "prettier --write ."
+	},
+	"dependencies": {
+		"@deemlol/next-icons": "^0.1.9",
+		"framer-motion": "^12.23.24",
+		"next": "^16.0.1",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4.1.17",
+		"@types/node": "^20.19.24",
+		"@types/react": "^19.2.2",
+		"@types/react-dom": "^19.2.2",
+		"babel-plugin-react-compiler": "^1.0.0",
+		"eslint": "^9.39.1",
+		"eslint-config-next": "^16.0.1",
+		"prettier": "^3.6.2",
+		"prettier-plugin-tailwindcss": "^0.7.1",
+		"tailwindcss": "^4.1.17",
+		"typescript": "^5.9.3"
+	},
+	"author": {
+		"name": "www.NextIcons.com",
+		"email": "contact@nexticons.com"
+	}
+}
