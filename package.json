@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"name": "nexticons-client-v2",
 	"description": "The official website for the Next-Icons package. Using Next.js and TailwindCSS.",
 	"scripts": {

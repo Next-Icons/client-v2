@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 
 //prettier-ignore
 import { OutfitThin, OutfitExtraLight, OutfitLight, OutfitRegular, OutfitMedium, OutfitSemiBold, OutfitBold, OutfitExtraBold, OutfitBlack } from "@/lib/fonts";
+import NavbarExport from "@/components/NavbarExport";
 import { DOMAIN_BASE_URL } from "@/lib/constants";
 import "../styles/globals.css";
 
@@ -203,12 +204,21 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+	// TODO: Make the purple background effect look better and modern
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body
-				className={`bg-[#121212] ${OutfitThin.className} ${OutfitExtraLight.className} ${OutfitLight.className} ${OutfitRegular.className} ${OutfitMedium.className} ${OutfitSemiBold.className} ${OutfitBold.className} ${OutfitExtraBold.className} ${OutfitBlack.className} antialiased`}
+				className={`relative min-h-screen overflow-x-hidden bg-[#121212] ${OutfitThin.className} ${OutfitExtraLight.className} ${OutfitLight.className} ${OutfitRegular.className} ${OutfitMedium.className} ${OutfitSemiBold.className} ${OutfitBold.className} ${OutfitExtraBold.className} ${OutfitBlack.className} antialiased`}
 			>
-				<main>{children}</main>
+				<div className="pointer-events-none absolute inset-0 -z-10 mix-blend-screen">
+					<div className="absolute inset-y-0 left-0 w-[40%] bg-linear-to-br from-[#A855F7]/30 via-transparent to-transparent" />
+					<div className="absolute inset-y-0 right-0 w-[40%] bg-linear-to-bl from-[#9333EA]/30 via-transparent to-transparent" />
+					<div className="absolute top-1/2 left-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#A855F7]/10 blur-[120px]" />
+				</div>
+
+				<NavbarExport />
+
+				<main className="relative z-20">{children}</main>
 			</body>
 		</html>
 	);
